@@ -22,7 +22,7 @@ export default ProgressBarExercise;
 const Solution = () => {
   return (
     <div>
-      <Progress id="chunky" max="100" value="70">70%</Progress>
+      <Progress value="40" />
       <Button>Start Request</Button>
     </div>
   );

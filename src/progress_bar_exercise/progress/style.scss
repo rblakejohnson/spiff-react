@@ -4,7 +4,7 @@
   display: block;
   width: 100%;
   height: 6px;
-  background: $gray-light;
+  // background: $gray-light; no background color in spec
 
   // display at the top of the window regardless of where it is in the DOM
   position: fixed;
