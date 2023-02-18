@@ -19,25 +19,22 @@ export default ProgressBarExercise;
 
 // ----------------------------------------------------------------------------------
 
-const fakeRequest = (fn) => {
-  setInterval(() => {
-    fn();
-  }, 1000);
-};
 const Solution = () => {
   const [value, setValue] = useState(0);
+  const [showProgress, setShowProgress] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (isLoading && value <= 90) {
-        setValue((state) => state + 15 / 90);
+        setValue((state) => state + 90 / 15);
       }
     }, 1000);
 
     if (value >= 100) {
       clearInterval(intervalId);
     }
+
 
     return () => {
       clearInterval(intervalId);
@@ -46,7 +43,7 @@ const Solution = () => {
 
   return (
     <div>
-      <Progress value={value} />
+      <Progress value={value} className={showProgress ? "" : "fadeIn"} />
       <div className="button-group">
         <Button
           disabled={isLoading}
@@ -62,6 +59,9 @@ const Solution = () => {
             onClick={() => {
               setIsLoading(false);
               setValue(100);
+              setTimeout(() => {
+                setShowProgress(false);
+              }, 3000);
             }}
           >
             Finish Request
