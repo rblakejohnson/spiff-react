@@ -1,0 +1,34 @@
+@import "../../shared_styles/colors.scss";
+
+.progress {
+  display: block;
+  width: 100%;
+  height: 6px;
+  background: $gray-light;
+
+  // display at the top of the window regardless of where it is in the DOM
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  .progress-value {
+    background-image: linear-gradient(to right, $coral, $red);
+    height: 100%;
+  }
+
+  // I started out with the <progress> element but discovered that styling in Firefox is limited
+  // because it doesn't have -progress-value
+
+  // appearance: none;
+  // border: none;
+
+  // &::-webkit-progress-bar,
+  // &::-moz-progress-bar {
+  //   background-color: green;
+  // }
+
+  // &::-webkit-progress-value,
+  // &::-moz-progress-value {
+  //   background-image: linear-gradient(to right, $coral, $red);
+  // }
+}
