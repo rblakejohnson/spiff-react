@@ -1,0 +1,20 @@
+@import "../../shared_styles/colors.scss";
+
+.button {
+  color: $green;
+  padding: 15px 25px;
+  border-radius: 99px; // ensure pill shape 
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border: 1px solid;
+
+  &:hover {
+    border-width: 2px;
+  }
+
+  &:active {
+    border-width: 3px;
+  }
+}
