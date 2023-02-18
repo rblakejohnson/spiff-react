@@ -14,6 +14,7 @@
   .progress-value {
     background-image: linear-gradient(to right, $coral, $red);
     height: 100%;
+    transition: width 1s ease;
   }
 
   // I started out with the <progress> element but discovered that styling in Firefox is limited

@@ -1,7 +1,6 @@
 @import "../../shared_styles/colors.scss";
 
 .button {
-  color: $green;
   padding: 15px 25px;
   border-radius: 99px; // ensure pill shape 
   text-transform: uppercase;
@@ -9,6 +8,7 @@
   font-size: 13px;
   letter-spacing: 1px;
   border: 1px solid;
+  user-select: none; // prevent text selection that commonly happens on multiple clicks/taps
 
   &:hover {
     border-width: 2px;
@@ -17,4 +17,14 @@
   &:active {
     border-width: 3px;
   }
+
+  &[disabled] {
+    pointer-events: none; // disabled hover and click
+    opacity: 0.5;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
 }
